@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" style="margin-left:4cm;width:28cm;height:3cm;background-color: chartreuse;">
+        <td><h1 style="text-align:center;color:brown">ATN SHOP</h1></td>
+    </table>
+    <div style="margin-left:4cm">
+    <table border="1" style="background-color:darkorange;margin-left:2cm">
+        <td><a href="/newProduct" style="">New Product</a></td>
+    </table>
+    <form action="/search" method="post" style="margin-left:2cm">
+        Search Product <input type="text" name="txtSearch">
+        <input type="submit" value="Search">
+    </form>
+    <table border="1" style="text-align: center; margin-left:2cm">
+        <tr style="color:blanchedalmond;background:black; width:1100px;height:40px">
+            <td style="width:8cm;height:1cm">Name</td>
+            <td style="width:8cm;height:1cm">Price</td>
+            <td style="width:8cm;height:1cm">Delete</td>
+        </tr>
+        {{#each model}}
+        <tr style="color:black;background:wheat">
+            <td style="width:8cm;height:1cm"><a href="edit?pid={{_id}}">{{productName}}</a></td>
+            <td style="width:8cm;height:1cm">{{price}}</td>
+            <td style="width:8cm;height:1cm"><a href="/delete?pid={{_id}}">{{_id}}</a></td>
+        </tr>
+        {{/each}}
+    </table>
+    </div>
+</body>
+</html>
